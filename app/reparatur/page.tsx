@@ -1,5 +1,6 @@
 import Link from "next/link"
 import { Navbar } from "@/components/blog/navbar"
+import { Footer } from "@/components/blog/footer"
 import { ArrowRight, Wrench, PlayCircle, BookOpen } from "lucide-react"
 
 const REPAIR_GUIDES = [

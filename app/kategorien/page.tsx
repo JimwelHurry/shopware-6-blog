@@ -1,5 +1,6 @@
 import Link from "next/link"
 import { Navbar } from "@/components/blog/navbar"
+import { Footer } from "@/components/blog/footer"
 import { ArrowRight, WashingMachine, Utensils, Coffee, Thermometer, Wind, MonitorSmartphone } from "lucide-react"
 
 const CATEGORIES = [
@@ -126,6 +127,8 @@ export default function KategorienPage() {
           </div>
         </div>
       </main>
+
+      <Footer />
     </div>
   )
 }

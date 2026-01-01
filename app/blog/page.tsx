@@ -1,5 +1,6 @@
 import Link from "next/link"
 import { Navbar } from "@/components/blog/navbar"
+import { Footer } from "@/components/blog/footer"
 import { BlogCard } from "@/components/blog/blog-card"
 import { CategoryFilter } from "@/components/blog/category-filter"
 import { BLOG_POSTS } from "@/lib/blog-data"
@@ -28,59 +29,10 @@ export default function BlogListingPage() {
               <BlogCard key={post.slug} {...post} />
             ))}
           </section>
-
-          <footer className="pt-20 border-t flex flex-col md:flex-row justify-between items-start gap-8">
-            <div className="max-w-xs space-y-4">
-              <h2 className="text-3xl">Brauchen Sie Hilfe?</h2>
-              <p className="text-sm text-muted-foreground">
-                Unser Support-Team hilft Ihnen gerne dabei, das passende Ersatzteil für Ihr Gerät zu finden.
-              </p>
-            </div>
-            <div className="flex gap-12 text-sm">
-              <div className="space-y-4">
-                <h4 className="font-bold uppercase tracking-widest text-[10px]">Informationen</h4>
-                <ul className="space-y-2 text-muted-foreground">
-                  <li>
-                    <Link href="#" className="hover:text-primary">
-                      Impressum
-                    </Link>
-                  </li>
-                  <li>
-                    <Link href="#" className="hover:text-primary">
-                      Datenschutz
-                    </Link>
-                  </li>
-                  <li>
-                    <Link href="#" className="hover:text-primary">
-                      AGB
-                    </Link>
-                  </li>
-                </ul>
-              </div>
-              <div className="space-y-4">
-                <h4 className="font-bold uppercase tracking-widest text-[10px]">Folgen Sie uns</h4>
-                <ul className="space-y-2 text-muted-foreground">
-                  <li>
-                    <Link href="#" className="hover:text-primary">
-                      YouTube
-                    </Link>
-                  </li>
-                  <li>
-                    <Link href="#" className="hover:text-primary">
-                      Instagram
-                    </Link>
-                  </li>
-                  <li>
-                    <Link href="#" className="hover:text-primary">
-                      Facebook
-                    </Link>
-                  </li>
-                </ul>
-              </div>
-            </div>
-          </footer>
         </div>
       </main>
+
+      <Footer />
     </div>
   )
 }

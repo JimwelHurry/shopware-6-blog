@@ -1,6 +1,7 @@
 import type { Metadata } from "next"
 import Image from "next/image"
 import { Navbar } from "@/components/blog/navbar"
+import { Footer } from "@/components/blog/footer"
 import { ArrowLeft, Clock, User, MessageCircle, Share2 } from "lucide-react"
 import Link from "next/link"
 import { ProductCard } from "@/components/blog/product-card"
@@ -148,6 +149,8 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
           </section>
         </article>
       </main>
+
+      <Footer />
     </div>
   )
 }

@@ -1,6 +1,7 @@
 import Link from "next/link"
 import Image from "next/image"
 import { Navbar } from "@/components/blog/navbar"
+import { Footer } from "@/components/blog/footer"
 import { ArrowRight, Wrench, Search, ShieldCheck } from "lucide-react"
 
 export default function HomePage() {
