@@ -1,5 +1,12 @@
 import Link from "next/link"
 import { Search, ShoppingCart, User, Mail, Menu, Camera, Phone } from "lucide-react"
+import {
+  Sheet,
+  SheetContent,
+  SheetHeader,
+  SheetTitle,
+  SheetTrigger,
+} from "@/components/ui/sheet"
 
 export function Navbar() {
   return (
@@ -44,13 +51,71 @@ export function Navbar() {
                 </div>
                 <span className="hidden lg:block text-[10px] uppercase tracking-wider">Warenkorb</span>
               </Link>
-              <button className="md:hidden text-white">
-                <Menu className="w-6 h-6" />
-              </button>
+              
+              {/* Mobile Menu Trigger */}
+              <Sheet>
+                <SheetTrigger asChild>
+                  <button className="md:hidden text-white hover:text-[#4ade80] transition-colors">
+                    <Menu className="w-6 h-6" />
+                  </button>
+                </SheetTrigger>
+                <SheetContent side="left" className="w-[300px] sm:w-[400px] overflow-y-auto">
+                  <SheetHeader className="border-b pb-4 mb-4 text-left">
+                    <SheetTitle className="text-2xl font-bold tracking-tighter flex items-center gap-2">
+                      ersatzteil<span className="text-primary font-serif italic font-normal">shop.de</span>
+                    </SheetTitle>
+                  </SheetHeader>
+                  
+                  <div className="flex flex-col gap-6">
+                    {/* Mobile Search */}
+                    <div className="relative">
+                      <input 
+                        type="text" 
+                        placeholder="Suchen..." 
+                        className="w-full h-10 rounded-md px-4 border text-foreground focus:outline-none focus:ring-2 focus:ring-primary/50"
+                      />
+                      <button className="absolute right-0 top-0 h-10 px-4 text-muted-foreground hover:text-primary">
+                        <Search className="w-4 h-4" />
+                      </button>
+                    </div>
+
+                    <nav className="flex flex-col gap-4 text-lg font-medium">
+                      <Link href="/" className="flex items-center gap-3 py-2 border-b hover:text-primary transition-colors">
+                        Haushalt
+                      </Link>
+                      <Link href="/kategorien" className="flex items-center gap-3 py-2 border-b hover:text-primary transition-colors">
+                        Küche
+                      </Link>
+                      <Link href="/reparatur" className="flex items-center gap-3 py-2 border-b hover:text-primary transition-colors">
+                        Reparaturanleitungen
+                      </Link>
+                      <Link href="/blog" className="flex items-center gap-3 py-2 border-b hover:text-primary transition-colors font-bold text-primary">
+                        Ratgeber / Magazin
+                      </Link>
+                      <Link href="/kategorien" className="flex items-center gap-3 py-2 border-b hover:text-primary transition-colors">
+                        Alle Geräte
+                      </Link>
+                    </nav>
+
+                    <div className="space-y-4 pt-4">
+                      <h4 className="font-semibold text-sm uppercase tracking-wider text-muted-foreground">Service</h4>
+                      <Link href="#" className="flex items-center gap-3 hover:text-primary transition-colors">
+                        <User className="w-5 h-5" /> Mein Konto
+                      </Link>
+                      <Link href="#" className="flex items-center gap-3 hover:text-primary transition-colors">
+                        <Mail className="w-5 h-5" /> Kontakt
+                      </Link>
+                      <Link href="#" className="flex items-center gap-3 hover:text-primary transition-colors">
+                        <Camera className="w-5 h-5" /> Typenschild Scanner
+                      </Link>
+                    </div>
+                  </div>
+                </SheetContent>
+              </Sheet>
             </div>
           </div>
 
-          {/* Mobile Search Bar (Visible only on small screens) */}
+          {/* Mobile Search Bar (Visible only on small screens below logo bar) */}
           <div className="mt-4 md:hidden relative">
             <input 
               type="text" 
